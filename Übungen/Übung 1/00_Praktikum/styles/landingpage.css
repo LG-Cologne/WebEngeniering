@@ -1,25 +1,30 @@
 @charset "utf-8";
 
-html{
+html {
     background-image: url("img/Background_Deathstar.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
 
-body{
+body {
     margin-left: 20%;
     margin-right: 20%;
 
     padding: 50px;
 
     background-color: rgba(151, 151, 151, 0.521);
-    background-size: 100;
-
-   
+    min-height: 100vh;
 }
 
-ul > li{
-    list-style-type:none;
+ul {
+    display: flex;
+    text-align: justify;
+    list-style-type: none;
+
+}
+
+li {
     display: inline-block;
+    flex: auto;
 }
