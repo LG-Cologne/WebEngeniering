@@ -8,9 +8,15 @@ Mustache_Autoloader::register();
 $template  = file_get_contents("./templates/beispiel.tpl.html");
 $mustache = new Mustache_Engine();
 
+setcookie('lastVisit', date('D, d M Y H:i:s'));
+
+$lastVisit = $_COOKIE["lastVisit"];
+
 echo $mustache ->render($template, array(
     'title' => "WebEng-PHP",
     'mail' => $_REQUEST['mail'],
     'password' => $_REQUEST['password'],
-    'status' => $_REQUEST['status']
+    'status' => $_REQUEST['status'],
+    'lastVisit' => $_COOKIE["lastVisit"]
 ));
+
