@@ -20,4 +20,17 @@ class Student {
     set note(note) {
         this._note = note
     }
+
+    getNotenBewertung(val) {
+        var grades = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"]
+        if (val < 7 && val > 0) {
+            return grades[val - 1]
+        }else{
+            console.log(val + " ist keine gültige Note")
+        }
+    }
+
+    toString(){
+        return "(Name: " + this._name + "; Note: " + this._note + ")"
+    }
 }

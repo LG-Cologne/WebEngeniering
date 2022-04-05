@@ -1,8 +1,10 @@
-function getNotenBewertung(val) {
-    var grades = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"]
-    if (val < 7 && val > 0) {
-        return grades[val - 1]
-    }else{
-        console.log(val + " ist keine gültige Note")
-    }
-}
+const nico = new Student('Nico')
+const andre = new Student('Andre')
+const jonas = new Student('Jonas')
+
+var students = [nico, andre, jonas]
+
+students.map((note => 1))
+
+
+Student.getNotenBewertung
