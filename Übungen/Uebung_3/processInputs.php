@@ -10,7 +10,8 @@ $mustache = new Mustache_Engine();
 
 setcookie('lastVisit', date('D, d M Y H:i:s'));
 
-$lastVisit = $_COOKIE["lastVisit"];
+filter_input_array($_REQUEST, $_REQUEST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+//filter_input_array(FILTER_SANITIZE_EMAIL, );
 
 echo $mustache ->render($template, array(
     'title' => "WebEng-PHP",
