@@ -27,4 +27,23 @@ students.forEach(student => {
     console.log(student.toString());
 });
 
-console.log(numbers);
+
+//Closures
+function createStudentFactory(note) {
+    return function (name) {
+        return new Student(name, note);
+    }
+}
+
+let studentFactory = createStudentFactory(5);
+
+let factoryStudents = [
+    studentFactory('David'),
+    studentFactory('Landon'),
+    studentFactory('Andreas'),
+];
+
+console.log('factory students:');
+factoryStudents.forEach(student => {
+    console.log(student.toString());
+});
