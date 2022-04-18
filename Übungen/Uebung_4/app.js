@@ -1,17 +1,30 @@
-const nico = new Student('Nico')
-const andre = new Student('Andre')
-const jonas = new Student('Jonas')
+// Objekte
+const andre = new Student('Andre', 1)
+const nico = new Student('Nico', 2)
+const jonas = new Student('Jonas', 3)
 
-var students = [nico, andre, jonas]
+let students = [nico, andre, jonas]
 
-students.map((note => 1))
+students.forEach(student => {
+    student.note++;
+    console.log(student.toString())
+})
 
-
-Student.getNotenBewertung
+// Anonyme Funktion
+console.log('before sorting:');
+students.forEach(student => {
+    console.log(student.toString());
+});
 
 students.sort(function (a, b) {
         return a.note - b.note;
     }
 )
 ;
+
+console.log('after sorting:');
+students.forEach(student => {
+    console.log(student.toString());
+});
+
 console.log(numbers);

@@ -1,5 +1,7 @@
 class Student {
 
+    static grades = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"]
+
     cunstuctor(name) {
         this._name = name;
     }
@@ -22,11 +24,11 @@ class Student {
     }
 
     static getNotenBewertung(val) {
-        var grades = ["sehr gut", "gut", "befriedigend", "ausreichend", "mangelhaft", "ungenügend"]
-        if (val < 7 && val > 0) {
-            return grades[val - 1]
+
+        if ((!val < 7 && val > 0)) {
+            return val + " ist keine gültige Note"
         } else {
-            console.log(val + " ist keine gültige Note")
+            return Student.grades[val - 1]
         }
     }
 
