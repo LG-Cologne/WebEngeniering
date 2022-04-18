@@ -8,3 +8,10 @@ students.map((note => 1))
 
 
 Student.getNotenBewertung
+
+students.sort(function (a, b) {
+        return a.note - b.note;
+    }
+)
+;
+console.log(numbers);
