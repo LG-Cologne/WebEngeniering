@@ -7,28 +7,11 @@ const jonas = new Student('Jonas', 3)
 
 let students = [nico, andre, jonas]
 
-students.forEach(student => {
-    student.note++;
-    console.log(student.toString())
-})
-
-// Anonyme Funktion
-console.log('before sorting:');
-students.forEach(student => {
-    console.log(student.toString());
-});
-
 students.sort(function (a, b) {
         return a.note - b.note;
     }
 )
 ;
-
-console.log('after sorting:');
-students.forEach(student => {
-    console.log(student.toString());
-});
-
 
 //Closures
 function createStudentFactory(note) {
@@ -44,14 +27,14 @@ let factoryStudents = [
     studentFactory('Landon'),
     studentFactory('Andreas'),
 ];
-
-console.log('factory students:');
-factoryStudents.forEach(student => {
-    console.log(student.toString());
-});
+//----------------------------------------------------------------------------
 
 const express = require('express');
 let app = express();
+
+app.listen(3000, function(){
+    console.log("Server is now listening to Port: 3000");
+});
 
 app.get('/student', function (req, res){
     let sending = ""
@@ -74,6 +57,5 @@ app.get('/studentFactory', function (req, res){
 let path = require('path')
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(3000, function(){
-    console.log("Server is now listening to Port: 3000");
-});
+app.use(express.urlencoded(({extended: true})))
+
