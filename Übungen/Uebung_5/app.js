@@ -1,4 +1,4 @@
-const Student = require('./student')
+const Student = require('./modules/student')
 
 // Objekte
 const andre = new Student('Andre', 1)
@@ -70,6 +70,10 @@ app.get('/studentFactory', function (req, res){
     res.type("text/plain")
     res.send(sending)
 })
+
+let path = require('path')
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.listen(3000, function(){
     console.log("Server is now listening to Port: 3000");
 });
