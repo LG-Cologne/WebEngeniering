@@ -59,3 +59,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded(({extended: true})))
 
+app.get('/print', function (req, res) {
+    res.type("text/plain");
+    res.send(req.query.name + " " + req.query.pw + " " + req.query.note)
+})
+
+app.post('/print', function (req, res) {
+    res.type("text/plain");
+    res.send(req.body.name + " " + req.body.pw + " " + req.body.note)
+})
