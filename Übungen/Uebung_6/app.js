@@ -30,13 +30,14 @@ let factoryStudents = [
 //----------------------------------------------------------------------------
 
 const express = require('express');
+const {check} = require('express-validator');
 let app = express();
 
-app.listen(3000, function(){
+app.listen(3000, function () {
     console.log("Server is now listening to Port: 3000");
 });
 
-app.get('/student', function (req, res){
+app.get('/student', function (req, res) {
     let sending = ""
     students.forEach(student => {
         sending += student.toString() + "\n"
@@ -45,7 +46,7 @@ app.get('/student', function (req, res){
     res.send(sending)
 })
 
-app.get('/studentFactory', function (req, res){
+app.get('/studentFactory', function (req, res) {
     let sending = ""
     factoryStudents.forEach(student => {
         sending += student.toString() + "\n"
@@ -68,3 +69,14 @@ app.post('/print', function (req, res) {
     res.type("text/plain");
     res.send(req.body.name + " " + req.body.pw + " " + req.body.note)
 })
+
+app.all('/print', [check('user').isLength(5), check('pw'), check('note').isIn(["Sehr Gut", "Gut", "Befriedigend", "Ausreichend", "Mangelhaft", "Ungenügend"])], function (req, res){
+    if(validationResult(req).isEmpty()){
+        let user = req.query.user;
+        let pw = req.query.pw;
+        let note = req.query.note;
+        res.type("text/plain").send("User: " + user + " PW: " + pw + " Note: " + note);
+    }else{
+        res.type('text/plain').status(422).send('Error in input!');
+    }
+});
