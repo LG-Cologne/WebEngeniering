@@ -30,7 +30,9 @@ let factoryStudents = [
 //----------------------------------------------------------------------------
 
 const express = require('express');
-const {check} = require('express-validator');
+const {check, validationResult} = require('express-validator');
+const cookie = require('cookie-parser)');
+
 let app = express();
 
 app.listen(3000, function () {
@@ -76,7 +78,12 @@ app.all('/print', [check('user').isLength(5), check('pw'), check('note').isIn(["
         let pw = req.query.pw;
         let note = req.query.note;
         res.type("text/plain").send("User: " + user + " PW: " + pw + " Note: " + note);
+        res.cook
     }else{
         res.type('text/plain').status(422).send('Error in input!');
     }
 });
+
+app.all('/cookie', function (req, res){
+    res.cookie('date', Date).send('Cookie-Parser');
+})
