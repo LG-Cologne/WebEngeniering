@@ -1,35 +1,43 @@
-function getFalafel(/* TODO: Parameter */) {
+function getFalafel(callback) {
     const falafel = "Falafel"
     console.log(falafel + " aus dem Kühlschrank geholt")
-    // TODO: ...
+    callback(falafel)
 }
 
-function fryFalafel(falafel, /* TODO: Parameter */) {
-    setTimeout(function() {
-		const friedFalafel = "Frittierte " + falafel
-		console.log(falafel + " frittiert")
-		// TODO: ...
-	}, 1000);
+function fryFalafel(falafel, callback) {
+    setTimeout(function () {
+        const friedFalafel = "Frittierte " + falafel
+        console.log(falafel + " frittiert")
+        callback(friedFalafel)
+    }, 1000);
 }
 
-function getWrap(/* TODO: Parameter */) {
+function getWrap(callback) {
     const wrap = "Wrap"
     console.log(wrap + " aus dem Schrank geholt")
-    // TODO: ...
+    callback(wrap)
 }
 
-function assembleFalafelWrap(wrap, friedFalafel,  /* TODO: Parameter */) {
+function assembleFalafelWrap(wrap, friedFalafel, callback) {
     const falafelwrap = "Falafel-Wrap"
     console.log(friedFalafel + " in " + wrap + " gewickelt")
-    // TODO: ...
+    callback(falafelwrap)
 }
 
-function prepareFalafelWrap(/* TODO: Parameter */) {
-    // TODO: Aufrufen der Zubereitungsschritte
+function prepareFalafelWrap(callback) {
+    getFalafel((falafel) => {
+        fryFalafel(falafel, (friedFalafel) => {
+            getWrap((wrap) => {
+                assembleFalafelWrap(wrap, friedFalafel, (falafelWrap) => {
+                    serve(falafelWrap);
+                });
+            });
+        });
+    });
 }
 
 function serve(meal) {
     console.log(meal + " serviert")
 }
 
-// TODO: Zubereiten und Servieren
+prepareFalafelWrap();
