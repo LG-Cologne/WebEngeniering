@@ -23,7 +23,12 @@ function assembleFalafelWrap(wrap, friedFalafel) {
 }
 
 function prepareFalafelWrap() {
-    // TODO: Aufrufen der Zubereitungsschritte
+    falafel = getFalafel();
+    friedFalafel = fryFalafel(falafel);
+    wrap = getWrap();
+    friedFalafelWrap = assembleFalafelWrap(wrap, friedFalafel);
+
+    return friedFalafelWrap
 }
 
 function serve(meal) {
@@ -31,3 +36,4 @@ function serve(meal) {
 }
 
 // TODO: Zubereiten und Servieren
+serve(prepareFalafelWrap());
