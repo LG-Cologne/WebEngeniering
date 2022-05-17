@@ -1,1 +1,3 @@
-alert(document.getElementById('submit').textContent)
+document.addEventListener("DOMContentLoaded", function (event) { 
+    alert(document.getElementById('submit').textContent) 
+});
