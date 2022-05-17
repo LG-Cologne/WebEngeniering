@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     // alert(document.getElementById('submit').textContent) 
 
+
+    //HTML Content
+    const submit = document.getElementById('submit');
+    const inputNote = document.getElementById('inputNote');
+    const inputPasswort = document.getElementById('inputPasswort');
+    const inputName = document.getElementById('inputName');
+
+    //Eventlistener
+    document.addEventListener('change', function (){
+        note = inputNote.value;
+        submit.style.backgroundColor = getColorCode(note);
+    });
+
+    //Functions
     function getColorCode(note) {
         switch (note) {
             case '1':
@@ -14,17 +28,5 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 return "#d9534f";
         }
     }
-
-    function getColorCode2(note) {
-        const colors = ["#5cb85c", "#f0ad4e", "#d9534f"]
-        return colors[(parseInt(note) - 1) / 2]
-    }
-
-    console.log(getColorCode2(1))
-    console.log(getColorCode2(2))
-    console.log(getColorCode2(3))
-    console.log(getColorCode2(4))
-    console.log(getColorCode2(5))
-    console.log(getColorCode2(6))
-
 });
+
