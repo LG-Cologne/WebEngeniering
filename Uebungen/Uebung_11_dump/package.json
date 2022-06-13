@@ -1,8 +1,8 @@
 {
-  "name": "uebung_11",
+  "name": "uebung11",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
@@ -10,19 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "consolidate": "^0.16.0",
     "express": "^4.18.1",
     "express-validator": "^6.14.1",
-    "mariadb": "^3.0.0",
-    "mysql2": "^2.3.3",
+    "mustache": "^4.2.0",
     "nodemon": "^2.0.16",
-    "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4",
     "sequelize": "^6.20.1",
-    "sqlite": "^4.1.1",
-    "sqlite3": "^5.0.8",
-    "tedious": "^14.5.0"
+    "sqlite3": "^5.0.8"
   }
 }

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<form method="POST">
+<div style="white-space: pre;">{{error_message}}</div><br/>
+<form method="POST" action="/users/register">
     <div>
         <label for="inputName">Benutzername:</label>
         <input type="text" name="user"
@@ -20,7 +21,7 @@
  
     <div>
         <label for="inputNote">Note:</label>
-        <input type="number" name="note" id="inputNote" placeholder="Note">
+        <input type="number" name="grade" id="inputNote" placeholder="Note">
     </div>
  
     <div>

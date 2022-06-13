@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Registrierung</title>
     <meta charset="UTF-8">
 </head>
 <body>
-<form method="POST" action="/users/check_login">
+<div style="white-space: pre;">{{error_message}}</div><br/>
+<form method="POST" action="/users/register">
     <div>
         <label for="inputName">Benutzername:</label>
         <input type="text" name="user"
                id="inputName" placeholder="Name">
     </div>
- 
+
     <div>
         <label for="inputPasswort">Passwort:</label>
         <input type="password" name="pw"
@@ -19,9 +20,13 @@
     </div>
 
     <div>
-        <button type="submit">Login</button>
+        <label for="inputNote">Note:</label>
+        <input type="number" name="note" id="inputNote" placeholder="Note">
+    </div>
+
+    <div>
+        <button type="submit">Registrieren</button>
     </div>
 </form>
-<a href="/users/register">Hier regristrieren</a>
 </body>
 </html>
