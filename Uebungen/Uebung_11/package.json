@@ -1,15 +1,16 @@
 {
-  "name": "uebung_10",
+  "name": "uebung_11",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "sequelize": "^6.20.1",
-    "sqlite3": "^5.0.8"
+    "nodemon": "^2.0.16",
+    "sequelize": "^6.20.1"
   }
 }
