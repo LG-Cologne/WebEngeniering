@@ -1,0 +1,21 @@
+{
+  "name": "node_ws",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.fh-aachen.de/webengineering/loesungen/node_ws"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ws": "^8.8.0"
+  },
+  "type": "module"
+}

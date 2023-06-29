@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple login form</title>
+        <meta charset="UTF-8">   
+    </head>
+    
+    <body>
+        <h1>Template File</h1>
+        <form method="POST" action="/print">
+            <div>
+                <label for="inputName">Name:</label>
+                <input type="text" name="user" 
+                       id="inputName" placeholder="Name">
+            </div>
+            
+            <div>
+                <label for="inputPasswort">Passwort:</label>
+                <input type="password" name="pw" 
+                   id="inputPasswort" placeholder="Passwort">
+            </div>
+            
+            <div>
+                <label for="note">Note: </label>
+                <select name="note" id="note">
+                    <option value="1">sehr gut</option>
+                    <option value="2">gut</option>
+                    <option value="3">befriedigend</option>
+                    <option value="4">ausreichend</option>
+                    <option value="5">mangelhaft</option>
+                    <option value="6">ungenügend</option>
+                </select>
+            </div>
+            
+            <div>
+                <button type="submit">Absenden</button>  
+            </div>
+        </form>
+
+        <p>{{cookie_data}}</p>
+        
+    </body>
+</html>

@@ -1,0 +1,18 @@
+.done {
+    text-decoration: line-through;
+   }
+   
+.delete_links {
+    margin-left: 5px;
+    font-size: 70%;
+   }
+   
+p{
+    display: inline;
+}
+   
+#icon8{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

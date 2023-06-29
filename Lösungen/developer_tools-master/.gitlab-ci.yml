@@ -1,0 +1,29 @@
+Praktikum:
+  image: 
+    name: telemark/robot-convert-docx-to-pdf:1.2.13
+    entrypoint: [""] # überschreibe entrypoint aus dockerfile (starte unoconv-Server)
+  stage: build
+  script:
+    - unoconv *.docx
+  artifacts:
+    expire_in: 6 week
+    paths:
+      - "*.pdf"
+  only:
+    - master
+    - /^ci.*$/
+    - tags
+  tags:
+    - shared
+pages:
+  stage: deploy
+  script:
+    - mkdir public  # create a folder called public
+    - cp *.pdf public  # copy the pdf file into the public folder
+  artifacts:
+    paths: 
+      - public  # instruct GitLab to keep the public folder
+  only: 
+    - master  # deploy the pdf only for commits made to the master branch 
+  tags:
+    - shared

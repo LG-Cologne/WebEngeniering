@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simple login form</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet"> <!--load all styles -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.css" rel="stylesheet"> <!--load all styles -->
+
+        <!-- custom styles -->
+        <link href="../stylesheets/login.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <div class="container">
+<!--           <form method="post" action="/print?src=meinsuperformular">-->
+            <form method="POST" action="/print">
+
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="form-group">
+                        <label for="user">Name</label>
+                        <div class="left-inner-addon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" id="user" name="user" placeholder="Name" class="form-control" required/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="left-inner-addon">
+                            <i class="fas fa-key"></i>
+                             <input type="password" id="password" name="password" placeholder="Password" class="form-control" required/>
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"/> Remember me
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="note">Note</label>
+                        <select name="note" class="form-control">
+                            <option value="1">sehr gut</option>
+                            <option value="2">gut</option>
+                            <option value="3">befriedigend</option>
+                            <option value="4">ausreichend</option>
+                            <option value="5">mangelhaft</option>
+                            <option value="6">ungenügend</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+
+            <p id="cookie_data">{{cookie_data}}</p>
+
+
+        </div>
+
+    </body>
+</html>

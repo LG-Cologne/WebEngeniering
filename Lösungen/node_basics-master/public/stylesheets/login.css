@@ -1,0 +1,22 @@
+
+.form-control{
+    max-width: 350px;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+
+.left-inner-addon i {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+#cookie_data{
+    margin-top: 20px;
+}
