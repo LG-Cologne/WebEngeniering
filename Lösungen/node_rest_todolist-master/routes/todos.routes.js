@@ -11,10 +11,16 @@ router.get('/', function (req, res) {
 
 // POST new todo
 router.post('/', function (req, res) {
+
     let todo = req.body;
-    if(!todo) return res.status(400).send("invalid todo")
+    if (!todo) return res.status(400).send("invalid todo")
+
+    console.log('Request Body:', req.body);
 
     let id = todos.addTodo(todo);
+
+    console.log('todos:', todos);
+
     res.type('application/json');
     res.send(todos.getTodo(id));
 })
@@ -26,7 +32,7 @@ router.get('/:id([0-9]+)', function (req, res) {
     // if(isNaN(id)) return res.status(400).send("invalid id")
 
     let result = todos.getTodo(id);
-    if(!result) return res.status(404).send("no ToDo with specified id")
+    if (!result) return res.status(404).send("no ToDo with specified id")
 
     res.type('application/json');
     res.send(result);
